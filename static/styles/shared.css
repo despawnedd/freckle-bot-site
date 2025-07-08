@@ -1,0 +1,14 @@
+@import url(modern-normalize.css);
+@import url(fonts.css);
+
+html {
+    background-color: #25222d;
+    color: white;
+    font-family: "Fira Sans";
+}
+body {
+    min-height: 100dvh;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
