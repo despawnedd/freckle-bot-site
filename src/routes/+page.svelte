@@ -2,6 +2,9 @@
     import noelle from "$lib/images/freckle thingy2.svg";
 
     const letters = "Freckle".split("");
+
+    // I hate Chrome
+    const colors = ["#f3c580", "#e3ab8d", "#d69797", "#c882a3", "#bf81b1", "#b581c1", "#ae82cc"];
 </script>
 
 <nav></nav>
@@ -12,7 +15,7 @@
 
 {#snippet letterss()}
     {#each letters as letter, i}
-        <span style="animation-delay: {i * 300}ms;">{letter}</span>
+        <span style="color: {colors[i]}; animation-delay: {i * 300}ms;">{letter}</span>
     {/each}
 {/snippet}
 
@@ -136,12 +139,7 @@
         font-family: "Fira Sans";
         font-weight: 500;
         font-size: 5rem;
-        color: transparent;
-        background: linear-gradient(90deg, #facf7b, #c982a1 50%, #a380dc);
-        -webkit-background-clip: text;
-        background-clip: text;
         position: absolute;
-        -webkit-text-fill-color: transparent;
     }
     .glowy span {
         display: inline-block;
