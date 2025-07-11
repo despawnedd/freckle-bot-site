@@ -13,24 +13,21 @@
     <div id="bg"></div>
 </div>
 
-{#snippet letterss()}
-    {#each letters as letter, i}
-        <span style="color: {colors[i]}; animation-delay: -{i * 300}ms;">{letter}</span>
-    {/each}
-{/snippet}
-
 <div id="main">
     <div id="goofyElementsContainer">
         <img src={noelle} alt="Noelle!" id="noelle" />
         <div id="glowyTop" class="glowy">
-            {@render letterss()}
-        </div>
-        <div id="glowyBottom" class="glowy">
-            {@render letterss()}
+            {#each letters as letter, i}
+                <span style="
+                color: {colors[i]};
+                filter: drop-shadow(0 0 6px {colors[i]});
+                animation-delay: -{i * 300}ms;">{letter}</span>
+            {/each}
         </div>
     </div>
     <div id="thingBelowGoofy">
         <span id="subtitle">a Discord app to make your day just a tiny bit more interesting</span>
+        <span id="disclaimer">in very early private access</span>
     </div>
 </div>
 
@@ -126,6 +123,7 @@
             width: 50%;
             left: 50%;
         }
+        z-index: -1;
     }
 
     /* https://www.reddit.com/r/webdev/comments/18wql80/how_to_create_a_gradient_text_with_each_letter/ */
@@ -150,11 +148,25 @@
     .glowy span:nth-child(2n) {
         animation: float-i 6s ease-in-out infinite;
     }
-    #glowyBottom {
-        filter: blur(6px);
-    }
 
     #thingBelowGoofy {
         padding-top: 9rem;
+        @media screen and (width >= 640px) {
+            max-width: 42rem;
+        }
+    }
+    #subtitle {
+        font-weight: bold;
+        font-size: xx-large;
+        line-height: 2.8rem;
+        display: block;
+    }
+    #disclaimer {
+        font-weight: bold;
+        font-size: large;
+        font-style: italic;
+        color: rgb(255, 66, 66);
+        padding-top: 1rem;
+        display: block;
     }
 </style>
