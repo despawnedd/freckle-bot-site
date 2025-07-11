@@ -15,7 +15,7 @@
 
 {#snippet letterss()}
     {#each letters as letter, i}
-        <span style="color: {colors[i]}; animation-delay: {i * 300}ms;">{letter}</span>
+        <span style="color: {colors[i]}; animation-delay: -{i * 300}ms;">{letter}</span>
     {/each}
 {/snippet}
 
@@ -41,29 +41,25 @@
 <style>
     :root {
         --float-amt: -5px;
+        --float-rot-start: -3deg;
+        --float-rot-end: 3deg;
     }
 
     /* https://codepen.io/MarioDesigns/pen/woJgeo */
     @keyframes float {
-        0% {
-            transform: translatey(0px);
-        }
         50% {
-            transform: translatey(var(--float-amt));
+            transform: rotateZ(var(--float-rot-start)) translateY(var(--float-amt));
         }
-        100% {
-            transform: translatey(0px);
+        0%, 100% {
+            transform: rotateZ(var(--float-rot-end)) translateY(0px);
         }
     }
     @keyframes float-i {
-        0% {
-            transform: translatey(var(--float-amt));
+        0%, 100% {
+            transform: rotateZ(var(--float-rot-start)) translateY(var(--float-amt));
         }
         50% {
-            transform: translatey(0px);
-        }
-        100% {
-            transform: translatey(var(--float-amt));
+            transform: rotateZ(var(--float-rot-end)) translateY(0px);
         }
     }
 
