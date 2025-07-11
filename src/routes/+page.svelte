@@ -15,9 +15,11 @@
 </div>
 
 <div id="main">
-    <div id="goofyElementsContainer">
+    <div id="noelleContainer">
         <img src={noelle} alt="Noelle!" id="noelle" />
-        <div id="glowyTop" class="glowy">
+    </div>
+    <div id="glowyContainer">
+        <div id="glowy">
             {#each letters as letter, i}
                 <span style="
                 color: {colors[i]};
@@ -107,57 +109,78 @@
     }
 
     #main {
+        margin-top: 2rem;
         padding: 4rem;
         @media screen and (width >= 1280px) {
+            margin-top: 4rem;
             padding-left: 12rem;
             padding-right: 12rem;
         }
     }
 
-    #goofyElementsContainer {
-        @media screen and (width >= 1280px) {
-            padding-top: 2rem;
+    #noelleContainer {
+        pointer-events: none;
+        user-select: none;
+        display: flex;
+        justify-content: right;
+        min-width: 100%;
+        max-width: 50rem;
+        z-index: -1;
+        @media screen and (width >= 800px) {
+            top: 0;
+            left: 0;
+            padding: 4rem;
+            position: absolute;
         }
-        position: relative;
+        @media screen and (width >= 1280px) {
+            padding-right: 12rem;
+        }
     }
 
     #noelle {
-        position: absolute;
-        pointer-events: none;
-        user-select: none;
-        @media screen and (width >= 640px) {
+        margin-bottom: -8rem;
+        @media screen and (width >= 800px) {
+            max-width: 60rem;
             width: 50%;
-            left: 50%;
         }
-        z-index: -1;
     }
 
+    #glowyContainer {
+        display: flex;
+        justify-content: center;
+        @media screen and (width >= 800px) {
+            justify-content: left;
+        }
+    }
     /* https://www.reddit.com/r/webdev/comments/18wql80/how_to_create_a_gradient_text_with_each_letter/ */
-    .glowy {
+    #glowy {
         letter-spacing: 0.4rem;
         width: 21rem;
         font-family: "Fira Sans";
         font-weight: 500;
         font-size: 5rem;
         position: absolute;
+        @media screen and (width >= 800px) {
+            padding-top: 0;
+        }
     }
-    .glowy span {
+    #glowy span {
         display: inline-block;
     }
-    .glowy span:first-child {
+    #glowy span:first-child {
         font-weight: 400;
         font-size: 7rem;
     }
-    .glowy span:nth-child(2n-1) {
+    #glowy span:nth-child(2n-1) {
         animation: float 6s ease-in-out infinite;
     }
-    .glowy span:nth-child(2n) {
+    #glowy span:nth-child(2n) {
         animation: float-i 6s ease-in-out infinite;
     }
 
     #thingBelowGoofy {
         padding-top: 9rem;
-        @media screen and (width >= 640px) {
+        @media screen and (width >= 800px) {
             max-width: 42rem;
         }
     }
@@ -178,7 +201,8 @@
 
     #mainButtons {
         display: flex;
-        column-gap: 2rem;
+        flex-wrap: wrap;
+        gap: 2rem;
         padding-top: 2rem;
     }
 </style>
