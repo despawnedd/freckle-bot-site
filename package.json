@@ -28,5 +28,8 @@
         "onlyBuiltDependencies": [
             "esbuild"
         ]
+    },
+    "dependencies": {
+        "material-symbols": "^0.32.0"
     }
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
     import noelle from "$lib/images/freckle thingy2.svg";
+    import ThickJuicyButton from "$lib/components/ThickJuicyButton.svelte";
 
     const letters = "Freckle".split("");
 
@@ -28,6 +29,11 @@
     <div id="thingBelowGoofy">
         <span id="subtitle">a Discord app to make your day just a tiny bit more interesting</span>
         <span id="disclaimer">in very early private access</span>
+    </div>
+    <div id="mainButtons">
+        <ThickJuicyButton color1="#c9839b" color2="#a8627a" color3="#965068" icon="chat" text="Add or invite" />
+        <ThickJuicyButton color1="#ae96d1" color2="#8c73b4" color3="#745b9c" icon="book_2" text="Read the docs" />
+        <ThickJuicyButton color1="#d0bb97" color2="#b79f76" color3="#9c845b" icon="build" text="Command builder" />
     </div>
 </div>
 
@@ -101,7 +107,7 @@
     }
 
     #main {
-        padding-top: 4rem;
+        padding: 4rem;
         @media screen and (width >= 1280px) {
             padding-left: 12rem;
             padding-right: 12rem;
@@ -168,5 +174,11 @@
         color: rgb(255, 66, 66);
         padding-top: 1rem;
         display: block;
+    }
+
+    #mainButtons {
+        display: flex;
+        column-gap: 2rem;
+        padding-top: 2rem;
     }
 </style>

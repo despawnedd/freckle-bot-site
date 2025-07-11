@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      material-symbols:
+        specifier: ^0.32.0
+        version: 0.32.0
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0.8
@@ -431,6 +435,9 @@ packages:
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
+
+  material-symbols@0.32.0:
+    resolution: {integrity: sha512-qpYGTPbaIUo7pgZF5WipR6bBACxf7+Q3sIZgayWCI3Upbo7lkCdR2CP0k1sLru34wP74ewZiKUvUr2P6iTUqHw==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -859,6 +866,8 @@ snapshots:
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.4
+
+  material-symbols@0.32.0: {}
 
   mri@1.2.0: {}
 
