@@ -88,12 +88,7 @@
                         </div>
                     </td>
                     {#if i === 0}
-                        <td>
-                            <ul>
-                                <li>default</li>
-                                <li>happy</li>
-                            </ul>
-                        </td>
+                        <td><ul><li>default</li></ul></td>
                     {:else}
                        <td>(to be added)</td>
                     {/if}
