@@ -1,7 +1,6 @@
 <script lang="ts">
     import noelle from "$lib/images/noelle.svg";
     import ThickJuicyButton from "$lib/components/ThickJuicyButton.svelte";
-    import { base } from "$app/paths";
 
     const letters = "Freckle".split("");
 
@@ -51,21 +50,21 @@
             color3="#965068"
             icon="chat"
             text="Add or invite"
-            href={`${base}/add`} />
+            href={`./add`} />
         <ThickJuicyButton
             color1="#ae96d1"
             color2="#8c73b4"
             color3="#745b9c"
             icon="book_2"
             text="Read the docs"
-            href={`${base}/docs`} />
+            href={`./docs`} />
         <ThickJuicyButton
             color1="#d0bb97"
             color2="#b79f76"
             color3="#9c845b"
             icon="build"
             text="Command builder"
-            href={`${base}/builder`} />
+            href={`./builder`} />
     </div>
     <span id="copy">&copy; despawnedd 2025</span>
 </div>

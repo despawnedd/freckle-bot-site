@@ -18,12 +18,12 @@
 </script>
 
 {#snippet navLink(name: string)}
-    <a class="{page.url.pathname === `/${name}` ? "active" : ""}" href={`/${name}`}>{name}</a>
+    <a class="{page.url.pathname === `./${name}` ? "active" : ""}" href={`./${name}`}>{name}</a>
 {/snippet}
 
 <nav>
     <div id="navLeft">
-        <a href="/" id="logoTextContainer">
+        <a href="./" id="logoTextContainer">
             <img src={logo_text} alt="Freckle logo" id="logoText">
         </a>
         <div id="navLeftLinks">
