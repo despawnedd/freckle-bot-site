@@ -55,12 +55,13 @@
     nav {
         display: flex;
         flex-direction: row;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 4rem;
-        background-color: #1e1c25aa;
+        background-color: #1e1c25cc;
+        backdrop-filter: blur(16px);
         justify-items: center;
         padding: 0 1rem 0 1rem;
         z-index: 1000;
