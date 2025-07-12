@@ -54,6 +54,8 @@
         display: flex;
         gap: 4rem;
         padding-top: 2rem;
+        padding-bottom: 2rem;
+        /* width: 100%; */
     }
     #docArticle {
         display: flex;

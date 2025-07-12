@@ -92,7 +92,7 @@
 {/snippet}
 
 <div id="main">
-    <h1>UT/DR textbox character expressions table</h1>
+    <h1>Textbox character expressions table</h1>
     <p>Most sprites are from The Sprites Resource (check the links below).</p>
     <p>
         skip to:
