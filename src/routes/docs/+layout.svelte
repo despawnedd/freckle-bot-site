@@ -52,21 +52,28 @@
 <style>
     #main {
         display: flex;
-        gap: 4rem;
+        @media screen and (width <= 1200px) {
+            flex-direction: column;
+        }
         padding-top: 2rem;
-        padding-bottom: 2rem;
-        /* width: 100%; */
     }
     #docArticle {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        padding: 0 4rem 4rem 22rem;
+        @media screen and (width <= 1200px) {
+            padding: 2rem 2rem 0 2rem;
+        }
     }
     ul {
         list-style: none;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        @media screen and (width > 1200px) {
+            position: fixed;
+        }
     }
     ul a {
         color: white;

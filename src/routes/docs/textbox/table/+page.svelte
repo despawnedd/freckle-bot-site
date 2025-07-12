@@ -91,34 +91,23 @@
     </table>
 {/snippet}
 
-<div id="main">
-    <h1>Textbox character expressions table</h1>
-    <p>Most sprites are from The Sprites Resource (check the links below).</p>
-    <p>
-        skip to:
-        {#each chars as char, i}
-            {#if i > 0}
-                <span>,</span>
-            {/if}
-            <a href={`#${char.id}`}>{char.name}</a>
-        {/each}
-    </p>
-
-    {#each chars as char}
-        {@render thingy(char)}
+<h1>Textbox character expressions table</h1>
+<p>Most sprites are from The Sprites Resource (check the links below).</p>
+<p>
+    skip to:
+    {#each chars as char, i}
+        {#if i > 0}
+            <span>,</span>
+        {/if}
+        <a href={`#${char.id}`}>{char.name}</a>
     {/each}
-</div>
+</p>
+
+{#each chars as char}
+    {@render thingy(char)}
+{/each}
 
 <style>
-    #main {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        @media screen and (width <= 800px) {
-            padding: 2rem;
-        }
-    }
-
     table {
         /* width: 30rem; */
         max-width: 30rem;
