@@ -100,7 +100,7 @@
             {#if i > 0}
                 <span>,</span>
             {/if}
-            <a href={char.id}>{char.name}</a>
+            <a href={`#${char.id}`}>{char.name}</a>
         {/each}
     </p>
 
