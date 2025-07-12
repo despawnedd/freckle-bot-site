@@ -6,7 +6,7 @@
     import { page } from '$app/state';
 
     onNavigate((navigation) => {
-        console.log(page.url.pathname);
+        // console.log(page.url.pathname);
 
         if (!document.startViewTransition) return;
 
@@ -17,10 +17,14 @@
             });
         });
     });
+
+    function linkIsCurrent(name: string) {
+        return page.url.pathname === `/${name}` || page.url.pathname === `/freckle-bot-site/${name}`;
+    }
 </script>
 
 {#snippet navLink(name: string)}
-    <a class="{page.url.pathname === `/${name}` ? "active" : ""}" href={`./${name}`}>{name}</a>
+    <a class="{linkIsCurrent(name) ? "active" : ""}" href={`./${name}`}>{name}</a>
 {/snippet}
 
 <nav>
