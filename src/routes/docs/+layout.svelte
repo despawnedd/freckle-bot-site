@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "material-symbols";
     import { base } from "$app/paths";
     import { page } from '$app/state';
     let { children } = $props();
@@ -49,6 +50,10 @@
     </div>
 </div>
 
+<div id="toTopBtnDiv">
+    <a href="#top" id="toTopBtn"><span class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_up</span></a>
+</div>
+
 <style>
     #main {
         display: flex;
@@ -75,18 +80,37 @@
             position: fixed;
         }
     }
+    a {
+        text-decoration: none;
+    }
     ul a {
         color: white;
-        text-decoration: none;
         font-size: large;
         background-color: rgb(56, 52, 68);
         padding: 0.5rem;
         border-radius: 0.5rem;
-        /* transition: 0.25s; */
     }
     li.active > a {
         color: #495057;
         background-color: #fff;
         border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+    #toTopBtnDiv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: calc(100dvw - 6rem);
+        margin-top: calc(100dvh - 6rem);
+        z-index: 1000;
+    }
+    #toTopBtn {
+        height: 5rem;
+    }
+    #toTopBtn > span {
+        font-size: 40pt;
+        color: white;
+        background-color: #495057;
+        border-radius: 2rem;
     }
 </style>

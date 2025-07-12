@@ -69,7 +69,6 @@
 
 {#snippet thingy(args: Whatever)}
     <h2 id={args.id}>{args.name}</h2>
-    <a href="#top">Back to top</a>
     <p>
         <a href={args.href} target="_blank">{args.hrefTitle}</a>
     </p>
@@ -82,7 +81,11 @@
             </tr>
             {#each { length: args.length }, i}
                 <tr>
-                    <td><img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} /></td>
+                    <td>
+                        <div>
+                            <img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} />
+                        </div>
+                    </td>
                     <td>{i + 1}</td>
                     <!-- <td>{i + 1}</td> -->
                 </tr>
@@ -114,5 +117,13 @@
     }
     td:first-child {
         background-color: black;
+        width: 8.5rem;
+        height: 9.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        image-rendering: pixelated;
     }
 </style>

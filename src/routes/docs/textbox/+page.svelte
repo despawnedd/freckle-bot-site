@@ -14,10 +14,14 @@
 
 <p>Has an animated (<code>/textboxa</code>) and static (<code>/textbox</code>) version.</p>
 <p>An example of such command:</p>
-<img alt="Screenshot of the /textboxa command output in the Discord client" src={ss1}>
+<div class="img-div">
+    <img alt="Screenshot of the /textboxa command output in the Discord client" src={ss1}>
+</div>
 
 <p>Both take the same arguments.</p>
-<img alt="Screenshot of the arguments popup in the Discord client" src={ss2}>
+<div class="img-div">
+    <img alt="Screenshot of the arguments popup in the Discord client" src={ss2}>
+</div>
 <ul style="line-height: 2rem;">
     <li>
         <code>text</code>: A string. See <a href={`${base}/docs/textbox/commands`}>Textbox commands</a> for available commands that you can insert.
@@ -33,3 +37,11 @@
     </li>
 </ul>
 
+<style>
+    .img-div {
+        display: flex;
+    }
+    .img-div > img {
+        max-width: 100%;
+    }
+</style>
