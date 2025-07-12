@@ -66,6 +66,7 @@
             text="Command builder"
             href="/builder" />
     </div>
+    <span id="copy">&copy; despawnedd 2025</span>
 </div>
 
 <svelte:head>
@@ -107,6 +108,7 @@
         left: 0;
         width: 100%;
         min-height: 100dvh;
+        z-index: -1;
     }
     #bgCont {
         margin: auto;
@@ -134,12 +136,12 @@
     }
 
     #main {
-        margin-top: 2rem;
-        padding: 0 4rem 4rem 4rem;
+        padding: 4rem 4rem 0 4rem;
         @media screen and (width >= 1280px) {
-            margin-top: 4rem;
-            padding-left: 12rem;
-            padding-right: 12rem;
+            padding: 4rem 12rem 0 12rem;
+        }
+        @media screen and (width <= 480px) {
+            padding: 4rem 2rem 0 2rem;
         }
     }
 
@@ -150,7 +152,6 @@
         justify-content: right;
         min-width: 100%;
         max-width: 50rem;
-        z-index: -1;
         @media screen and (width >= 800px) {
             top: 0;
             left: 0;
@@ -163,8 +164,9 @@
     }
 
     #noelle {
-        margin-bottom: -8rem;
+        margin: -2rem 0 -8rem 0;
         @media screen and (width >= 800px) {
+            margin: 0;
             padding-top: 1rem;
             max-width: 60rem;
             width: 50%;
@@ -188,6 +190,9 @@
         position: absolute;
         @media screen and (width >= 800px) {
             padding-top: 0;
+        }
+        @media screen and (width <= 480px) {
+            scale: 0.85;
         }
     }
     #glowy span {
@@ -234,5 +239,13 @@
         flex-wrap: wrap;
         gap: 2rem;
         padding-top: 2rem;
+    }
+
+    #copy {
+        font-size: large;
+        padding-top: 5rem;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 </style>

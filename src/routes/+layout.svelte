@@ -3,6 +3,7 @@
     import { onNavigate } from '$app/navigation';
 
 	let { children } = $props();
+    import { page } from '$app/state';
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return;
@@ -16,19 +17,23 @@
     });
 </script>
 
+{#snippet navLink(name: string)}
+    <a class="{page.url.pathname === `/${name}` ? "active" : ""}" href={`/${name}`}>{name}</a>
+{/snippet}
+
 <nav>
     <div id="navLeft">
         <a href="/" id="logoTextContainer">
             <img src={logo_text} alt="Freckle logo" id="logoText">
         </a>
         <div id="navLeftLinks">
-            <a href="/add">add</a>
-            <a href="/docs">docs</a>
-            <a href="/builder">builder</a>
+            {#each ["add", "docs", "builder"] as name}
+                {@render navLink(name)}
+            {/each}
         </div>
     </div>
     <div id="navRight">
-        <a href="/about">about</a>
+        {@render navLink("about")}
     </div>
 </nav>
 
@@ -83,6 +88,9 @@
         font-size: 16pt;
         font-weight: 600;
         display: block;
+    }
+    nav a.active {
+        color: white;
     }
 
     #thingamajig {
