@@ -4,17 +4,26 @@
 
     const letters = "Freckle".split("");
 
+    let bgContCont: HTMLDivElement;
+    let height = $state(0);
+
     // I hate Chrome
     const colors = ["#f3c580", "#e3ab8d", "#d69797", "#c882a3", "#bf81b1", "#b581c1", "#ae82cc"];
+
+    $effect(() => {
+        bgContCont.style.height = `${height + 100}px`;
+    });
 </script>
 
 <!-- TODO: make noelle's thingy glow + fix button icon sizes -->
 
-<div id="bgCont">
-    <div id="bg"></div>
+<div bind:this={bgContCont} id="bgContCont">
+    <div id="bgCont">
+        <div id="bg"></div>
+    </div>
 </div>
 
-<div id="main">
+<div bind:clientHeight={height} id="main">
     <div id="noelleContainer">
         <img src={noelle} alt="Noelle!" id="noelle" />
     </div>
@@ -90,12 +99,17 @@
         }
     }
 
-    #bgCont {
+    #bgContCont {
+        display: flex;
+        overflow: hidden;
         position: absolute;
         top: 0;
         left: 0;
-        margin: auto;
         width: 100%;
+        min-height: 100dvh;
+    }
+    #bgCont {
+        margin: auto;
         min-height: 100%;
         overflow: hidden;
         display: flex;
