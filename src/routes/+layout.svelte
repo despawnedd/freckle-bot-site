@@ -1,35 +1,39 @@
 <script lang="ts">
     import logo_text from "$lib/images/logo_text.svg";
-    import { onNavigate } from '$app/navigation';
-
-	let { children } = $props();
     import { page } from '$app/state';
+    import { base } from "$app/paths";
+	let { children } = $props();
 
-    onNavigate((navigation) => {
-        // console.log(page.url.pathname);
+    // the code below was disabled because:
+    // 1. this isn't common
+    // 2. it doesn't work on firefox
 
-        if (!document.startViewTransition) return;
+    // import { onNavigate } from '$app/navigation';
+    // onNavigate((navigation) => {
+    //     // console.log(page.url.pathname);
 
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
+    //     if (!document.startViewTransition) return;
+
+    //     return new Promise((resolve) => {
+    //         document.startViewTransition(async () => {
+    //             resolve();
+    //             await navigation.complete;
+    //         });
+    //     });
+    // });
 
     function linkIsCurrent(name: string) {
-        return page.url.pathname === `/${name}` || page.url.pathname === `/freckle-bot-site/${name}`;
+        return page.url.pathname.startsWith(`${base}/${name}`);
     }
 </script>
 
 {#snippet navLink(name: string)}
-    <a class="{linkIsCurrent(name) ? "active" : ""}" href={`./${name}`}>{name}</a>
+    <a class="{linkIsCurrent(name) ? "active" : ""}" href={`${base}/${name}`}>{name}</a>
 {/snippet}
 
 <nav>
     <div id="navLeft">
-        <a href="./" id="logoTextContainer">
+        <a href={base ? base : "/"} id="logoTextContainer">
             <img src={logo_text} alt="Freckle logo" id="logoText">
         </a>
         <div id="navLeftLinks">
