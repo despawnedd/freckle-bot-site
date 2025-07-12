@@ -6,6 +6,8 @@
     import { page } from '$app/state';
 
     onNavigate((navigation) => {
+        console.log(page.url.pathname);
+
         if (!document.startViewTransition) return;
 
         return new Promise((resolve) => {
@@ -18,7 +20,7 @@
 </script>
 
 {#snippet navLink(name: string)}
-    <a class="{page.url.pathname === `./${name}` ? "active" : ""}" href={`./${name}`}>{name}</a>
+    <a class="{page.url.pathname === `/${name}` ? "active" : ""}" href={`./${name}`}>{name}</a>
 {/snippet}
 
 <nav>
