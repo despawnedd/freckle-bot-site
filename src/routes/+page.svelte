@@ -1,5 +1,5 @@
 <script lang="ts">
-    import noelle from "$lib/images/freckle thingy2.svg";
+    import noelle from "$lib/images/noelle.svg";
     import ThickJuicyButton from "$lib/components/ThickJuicyButton.svelte";
 
     const letters = "Freckle".split("");
@@ -8,7 +8,7 @@
     const colors = ["#f3c580", "#e3ab8d", "#d69797", "#c882a3", "#bf81b1", "#b581c1", "#ae82cc"];
 </script>
 
-<nav></nav>
+<!-- TODO: make noelle's thingy glow + fix button icon sizes -->
 
 <div id="bgCont">
     <div id="bg"></div>
@@ -21,21 +21,41 @@
     <div id="glowyContainer">
         <div id="glowy">
             {#each letters as letter, i}
-                <span style="
-                color: {colors[i]};
-                filter: drop-shadow(0 0 6px {colors[i]});
-                animation-delay: -{i * 300}ms;">{letter}</span>
+                <span
+                    style="
+                    color: {colors[i]};
+                    filter: drop-shadow(0 0 6px {colors[i]});
+                    animation-delay: -{i}s;">{letter}</span>
             {/each}
         </div>
     </div>
     <div id="thingBelowGoofy">
-        <span id="subtitle">a Discord app to make your day just a tiny bit more interesting</span>
+        <span id="subtitle"
+            >a Discord app to make your day just a tiny bit more interesting</span>
         <span id="disclaimer">in very early private access</span>
     </div>
     <div id="mainButtons">
-        <ThickJuicyButton color1="#c9839b" color2="#a8627a" color3="#965068" icon="chat" text="Add or invite" />
-        <ThickJuicyButton color1="#ae96d1" color2="#8c73b4" color3="#745b9c" icon="book_2" text="Read the docs" />
-        <ThickJuicyButton color1="#d0bb97" color2="#b79f76" color3="#9c845b" icon="build" text="Command builder" />
+        <ThickJuicyButton
+            color1="#c9839b"
+            color2="#a8627a"
+            color3="#965068"
+            icon="chat"
+            text="Add or invite"
+            href="/add" />
+        <ThickJuicyButton
+            color1="#ae96d1"
+            color2="#8c73b4"
+            color3="#745b9c"
+            icon="book_2"
+            text="Read the docs"
+            href="/docs" />
+        <ThickJuicyButton
+            color1="#d0bb97"
+            color2="#b79f76"
+            color3="#9c845b"
+            icon="build"
+            text="Command builder"
+            href="/builder" />
     </div>
 </div>
 
@@ -55,12 +75,14 @@
         50% {
             transform: rotateZ(var(--float-rot-start)) translateY(var(--float-amt));
         }
-        0%, 100% {
+        0%,
+        100% {
             transform: rotateZ(var(--float-rot-end)) translateY(0px);
         }
     }
     @keyframes float-i {
-        0%, 100% {
+        0%,
+        100% {
             transform: rotateZ(var(--float-rot-start)) translateY(var(--float-amt));
         }
         50% {
@@ -97,20 +119,9 @@
         opacity: 75%;
     }
 
-    nav {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4rem;
-        background-color: #1e1c25aa;
-    }
-
     #main {
         margin-top: 2rem;
-        padding: 4rem;
+        padding: 0 4rem 4rem 4rem;
         @media screen and (width >= 1280px) {
             margin-top: 4rem;
             padding-left: 12rem;
@@ -140,6 +151,7 @@
     #noelle {
         margin-bottom: -8rem;
         @media screen and (width >= 800px) {
+            padding-top: 1rem;
             max-width: 60rem;
             width: 50%;
         }
@@ -166,7 +178,11 @@
     }
     #glowy span {
         display: inline-block;
+        /* transition: 0.25s; */
     }
+    /* #glowy span:hover {
+        scale: 1.2;
+    } */
     #glowy span:first-child {
         font-weight: 400;
         font-size: 7rem;

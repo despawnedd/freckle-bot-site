@@ -1,22 +1,26 @@
 <script lang="ts">
     import "material-symbols";
 
-    let { icon, text, color1, color2, color3 }: {
+    let { icon, text, href, color1, color2, color3 }: {
         icon: string, // svg
         text: string,
+        href: string,
         color1: string,
         color2: string,
         color3: string
     } = $props();
 </script>
 
-<button id="main" style="background: linear-gradient(180deg, {color1} 0%, {color2} 16%, {color3} 34%);">
+<a {href} id="main" style="background: linear-gradient(180deg, {color1} 0%, {color2} 16%, {color3} 34%);">
     <span id="leftIcon" class="material-symbols-outlined" aria-hidden="true">{icon}</span>
     <span id="text">{text}</span>
     <span id="rightIcon" class="material-symbols-outlined" aria-hidden="true">keyboard_arrow_right</span>
-</button>
+</a>
 
 <style>
+    a {
+        text-decoration: none;
+    }
     #main {
         height: 4rem;
         padding-left: 1rem;
@@ -30,6 +34,7 @@
         border-radius: 16px;
         font-size: x-large;
         transition: 0.25s;
+        user-select: none;
     }
     #main:hover {
         cursor: pointer;
