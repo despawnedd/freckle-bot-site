@@ -75,19 +75,28 @@
     <table>
         <tbody>
             <tr>
-                <th style="width: 0;">Portrait</th>
                 <th>ID</th>
-                <!-- <th>Description</th> -->
+                <th>Portrait</th>
+                <th>Description</th>
             </tr>
             {#each { length: args.length }, i}
                 <tr>
+                    <td>{i + 1}</td>
                     <td>
                         <div>
                             <img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} />
                         </div>
                     </td>
-                    <td>{i + 1}</td>
-                    <!-- <td>{i + 1}</td> -->
+                    {#if i === 0}
+                        <td>
+                            <ul>
+                                <li>default</li>
+                                <li>happy</li>
+                            </ul>
+                        </td>
+                    {:else}
+                       <td>(to be added)</td>
+                    {/if}
                 </tr>
             {/each}
         </tbody>
@@ -112,10 +121,19 @@
 
 <style>
     table {
-        /* width: 30rem; */
-        max-width: 30rem;
+        max-width: 25rem;
     }
-    td:first-child {
+    th:nth-child(1) {
+        width: 2rem;
+    }
+    th:nth-child(2) {
+        width: 0;
+    }
+    td:nth-child(1) {
+        font-size: 20pt;
+        text-align: center;
+    }
+    td:nth-child(2) {
         background-color: black;
         width: 8.5rem;
         height: 9.5rem;
