@@ -6,6 +6,10 @@ title: Introduction to Textboxes
     import { base } from "$app/paths";
 </script>
 
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
+
 # {title}
 
 Generates textboxes (currently on UNDERTALE/DELTARUNE), akin to [Undertale text box generator - Demirramon's hideout](https://www.demirramon.com/generators/undertale_text_box_generator).

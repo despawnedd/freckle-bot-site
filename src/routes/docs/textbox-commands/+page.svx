@@ -2,6 +2,10 @@
 title: Textbox commands
 ---
 
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
+
 # {title}
 
 *More, such as `${speed:amount}`, coming soon.*

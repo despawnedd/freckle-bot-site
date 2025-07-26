@@ -2,6 +2,8 @@
 <!-- I chose the former -->
 
 <script lang="ts">
+    export const title = "Expressions table";
+
     import { base } from "$app/paths";
 
     interface Whatever {
@@ -64,6 +66,10 @@
         }
     ];
 </script>
+
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
 
 {#snippet thingy(args: Whatever)}
     <h2 id={args.id}>

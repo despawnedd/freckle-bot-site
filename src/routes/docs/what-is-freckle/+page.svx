@@ -2,4 +2,8 @@
 title: What is Freckle?
 ---
 
+<svelte:head>
+    <title>{title}</title>
+</svelte:head>
+
 # {title}
