@@ -7,7 +7,7 @@ title: Introduction to Textboxes
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+    <title>{title} &ndash; Freckle</title>
 </svelte:head>
 
 # {title}

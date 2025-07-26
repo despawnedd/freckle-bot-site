@@ -68,7 +68,7 @@
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+    <title>{title} &ndash; Freckle</title>
 </svelte:head>
 
 {#snippet thingy(args: Whatever)}

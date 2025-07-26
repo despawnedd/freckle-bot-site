@@ -3,7 +3,7 @@ title: What is Freckle?
 ---
 
 <svelte:head>
-    <title>{title}</title>
+    <title>{title} &ndash; Freckle</title>
 </svelte:head>
 
 # {title}
