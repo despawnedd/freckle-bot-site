@@ -1,8 +1,3 @@
-<!-- Page title -->
-<svelte:head>
-    <title>Docs &gt; Textbox &gt; Expressions table &ndash; Freckle</title>
-</svelte:head>
-
 <script lang="ts">
     import { base } from "$app/paths";
 

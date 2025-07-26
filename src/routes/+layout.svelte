@@ -76,7 +76,6 @@
         color: rgb(180, 180, 180);
         text-decoration: none;
         font-size: 16pt;
-        font-weight: 600;
         display: block;
     }
     nav a.active {

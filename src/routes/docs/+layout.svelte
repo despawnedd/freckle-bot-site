@@ -9,40 +9,30 @@
         return page.url.pathname === `${base}/docs${id ? "/" + id : ""}`;
     }
 
-    interface Article {
-        name: string;
-        id: string;
-    }
-    const articles: Article[] = [
-        {
-            name: "Home",
-            id: ""
-        },
-        {
-            name: "Textbox",
-            id: "textbox"
-        },
-        {
-            name: "Textbox > Commands",
-            id: "textbox/commands"
-        },
-        {
-            name: "Textbox > Expressions table",
-            id: "textbox/table"
-        }
-    ];
+    const articleNameMap = {
+        "what-is-freckle": "What is Freckle?",
+        "intro-to-textboxes": "Intoduction to Textboxes",
+        "textbox-commands": "Textbox commands",
+        "expressions-table": "Expressions table"
+    };
+
+    // don't ask, again
+    type ArticleId = keyof typeof articleNameMap;
 </script>
 
-{#snippet docsNavLink(art: Article)}
-    <li class="{linkIsCurrentDocs(art.id) ? "active" : ""}"><a href={`${base}/docs/${art.id}`}>{art.name}</a></li>
+{#snippet docsNavLink(articleId: ArticleId)}
+    <li class="{linkIsCurrentDocs(articleId) ? "active" : ""}"><a href={`${base}/docs/${articleId}`}>{articleNameMap[articleId]}</a></li>
 {/snippet}
 
 <div id="main">
-    <aside style="float: left;">
+    <aside>
         <ul>
-            {#each articles as article}
-                {@render docsNavLink(article)}
-            {/each}
+            <h3>Introduction</h3>
+            {@render docsNavLink("what-is-freckle")}
+            <h3>Textbox</h3>
+            {@render docsNavLink("intro-to-textboxes")}
+            {@render docsNavLink("textbox-commands")}
+            {@render docsNavLink("expressions-table")}
         </ul>
     </aside>
     <div id="docArticle">
@@ -55,18 +45,21 @@
 </div>
 
 <style>
+    aside {
+        float: left;
+    }
+
     #main {
         display: flex;
         @media screen and (width <= 1200px) {
             flex-direction: column;
         }
-        padding-top: 2rem;
     }
     #docArticle {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding: 0 4rem 4rem 22rem;
+        padding: 2rem 4rem 4rem 22rem;
         @media screen and (width <= 1200px) {
             padding: 2rem 2rem 0 2rem;
         }
@@ -75,24 +68,26 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
+        background-color: #1f1d27;
+        margin: 0;
         @media screen and (width > 1200px) {
             position: fixed;
+            height: 100%;
+            padding-top: 2rem;
+            padding-right: 4rem;
         }
     }
     a {
         text-decoration: none;
     }
     ul a {
-        color: white;
-        font-size: large;
-        background-color: rgb(56, 52, 68);
-        padding: 0.5rem;
+        padding: 1rem;
         border-radius: 0.5rem;
+        color: #b2a7b8;
     }
     li.active > a {
-        color: #495057;
-        background-color: #fff;
+        color: white;
         border-color: #dee2e6 #dee2e6 #fff;
     }
 
