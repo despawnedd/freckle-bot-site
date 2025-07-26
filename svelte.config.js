@@ -5,8 +5,6 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import slug from "rehype-slug";
 import autolink_headings from "rehype-autolink-headings";
 
-import { APP_REDIRECTS } from './src/redirects.js';
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     // Consult https://svelte.dev/docs/kit/integrations
@@ -38,14 +36,7 @@ const config = {
         paths: {
             base: process.argv.includes("dev") ? "" : "/freckle-bot-site"
         },
-        alias: { $components: "src/components" },
-        // https://supun.io/sveltekit-static-redirects
-        prerender: {
-			entries: [
-				'*',
-				...Object.keys(APP_REDIRECTS)
-			]
-        }
+        alias: { $components: "src/components" }
     },
     extensions: [".svelte", ".svx"]
 };

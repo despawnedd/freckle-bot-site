@@ -62,7 +62,7 @@
             color3="#745b9c"
             icon="book_2"
             text="Read the docs"
-            href={`${base}/docs`} />
+            href={`${base}/docs/what-is-freckle`} />
         <ThickJuicyButton
             color1="#d0bb97"
             color2="#b79f76"

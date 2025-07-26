@@ -9,8 +9,8 @@
     }
 </script>
 
-{#snippet navLink(name: string)}
-    <a class={linkIsCurrent(name) ? "active" : ""} href={`${base}/${name}`}>{name}</a>
+{#snippet navLink(name: string, link?: string)}
+    <a class={linkIsCurrent(name) ? "active" : ""} href={link ? link : `${base}/${name}`}>{name}</a>
 {/snippet}
 
 <nav>
@@ -19,9 +19,9 @@
             <LogoWithText />
         </a>
         <div id="navLeftLinks">
-            {#each ["add", "docs", "builder"] as name}
-                {@render navLink(name)}
-            {/each}
+            {@render navLink("add")}
+            {@render navLink("docs", "docs/what-is-freckle")}
+            {@render navLink("builder")}
         </div>
     </div>
     <div id="navRight">
