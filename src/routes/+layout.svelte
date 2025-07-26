@@ -1,26 +1,8 @@
 <script lang="ts">
-    import logo_text from "$lib/images/logo_text.svg";
-    import { page } from '$app/state';
+    import LogoWithText from "$lib/components/svg/LogoWithText.svelte";
+    import { page } from "$app/state";
     import { base } from "$app/paths";
-	let { children } = $props();
-
-    // the code below was disabled because:
-    // 1. this isn't common
-    // 2. it doesn't work on firefox
-
-    // import { onNavigate } from '$app/navigation';
-    // onNavigate((navigation) => {
-    //     // console.log(page.url.pathname);
-
-    //     if (!document.startViewTransition) return;
-
-    //     return new Promise((resolve) => {
-    //         document.startViewTransition(async () => {
-    //             resolve();
-    //             await navigation.complete;
-    //         });
-    //     });
-    // });
+    let { children } = $props();
 
     function linkIsCurrent(name: string) {
         return page.url.pathname.startsWith(`${base}/${name}`);
@@ -28,13 +10,13 @@
 </script>
 
 {#snippet navLink(name: string)}
-    <a class="{linkIsCurrent(name) ? "active" : ""}" href={`${base}/${name}`}>{name}</a>
+    <a class={linkIsCurrent(name) ? "active" : ""} href={`${base}/${name}`}>{name}</a>
 {/snippet}
 
 <nav>
     <div id="navLeft">
         <a href={base ? base : "/"} id="logoTextContainer">
-            <img src={logo_text} alt="Freckle logo" id="logoText">
+            <LogoWithText />
         </a>
         <div id="navLeftLinks">
             {#each ["add", "docs", "builder"] as name}
@@ -66,7 +48,8 @@
         padding: 0 1rem 0 1rem;
         z-index: 1000;
     }
-    #navLeft, #navRight {
+    #navLeft,
+    #navRight {
         display: flex;
         gap: 2rem;
     }
@@ -86,12 +69,8 @@
     #logoTextContainer {
         display: flex;
         align-items: end;
-    }
-    #logoText {
-        padding: auto;
-        display: block;
+        width: 10rem;
         height: 100%;
-        padding-top: 0.5rem;
     }
     nav a {
         color: rgb(180, 180, 180);

@@ -4,11 +4,11 @@
 </svelte:head>
 
 <script lang="ts">
-    import logo_text from "$lib/images/logo_text.svg";
+    import LogoWithText from "$lib/components/svg/LogoWithText.svelte";
 </script>
 
 <div id="logoDiv">
-    <img style="width: 20rem;" src={logo_text} alt="Freckle logo" id="logoText">
+    <div id="logoContainer"><LogoWithText /></div>
 </div>
 <p>a Discord app to make your day just a tiny bit more interesting</p>
 <p>&copy; despawnedd 2025</p>
@@ -20,6 +20,10 @@
         width: 100%;
         justify-content: center;
         padding-top: 2rem;
+    }
+
+    #logoContainer {
+        width: 20rem;
     }
 
     p {

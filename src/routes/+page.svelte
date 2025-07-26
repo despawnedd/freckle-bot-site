@@ -4,7 +4,7 @@
 </svelte:head>
 
 <script lang="ts">
-    import noelle from "$lib/images/noelle.svg";
+    import NoelleLanding from "$lib/components/svg/NoelleLanding.svelte";
     import ThickJuicyButton from "$lib/components/ThickJuicyButton.svelte";
     import { base } from "$app/paths";
 
@@ -13,7 +13,6 @@
     let bgContCont: HTMLDivElement;
     let height = $state(0);
 
-    // I hate Chrome
     const colors = ["#f3c580", "#e3ab8d", "#d69797", "#c882a3", "#bf81b1", "#b581c1", "#ae82cc"];
 
     $effect(() => {
@@ -31,7 +30,7 @@
 
 <div bind:clientHeight={height} id="main">
     <div id="noelleContainer">
-        <img src={noelle} alt="Noelle!" id="noelle" />
+        <div id="noelleContainerAgain"><NoelleLanding /></div>
     </div>
     <div id="glowyContainer">
         <div id="glowy">
@@ -165,7 +164,7 @@
         }
     }
 
-    #noelle {
+    #noelleContainerAgain {
         margin: -2rem 0 -8rem 0;
         @media screen and (width >= 800px) {
             margin: 0;
