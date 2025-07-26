@@ -1,3 +1,6 @@
+<!-- Since this isn't a .svx file, I either have to manually add header links or set up jank -->
+<!-- I chose the former -->
+
 <script lang="ts">
     import { base } from "$app/paths";
 
@@ -63,7 +66,12 @@
 </script>
 
 {#snippet thingy(args: Whatever)}
-    <h2 id={args.id}>{args.name}</h2>
+    <h2 id={args.id}>
+        <a aria-hidden="true" tabindex="-1" href={`#${args.id}`}>
+            <span class="material-symbols-outlined header-link">link</span>
+        </a>
+        {args.name}
+    </h2>
     <p>
         <a href={args.href} target="_blank">{args.hrefTitle}</a>
     </p>
@@ -93,7 +101,12 @@
     </table>
 {/snippet}
 
-<h1>Textbox character expressions table</h1>
+<h1>
+    <a aria-hidden="true" tabindex="-1" href="#title">
+        <span class="material-symbols-outlined header-link">link</span>
+    </a>
+    Textbox character expressions table
+</h1>
 <p>Most sprites are from The Sprites Resource (check the links below).</p>
 <p>
     skip to:

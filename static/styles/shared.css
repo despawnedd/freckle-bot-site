@@ -35,3 +35,27 @@ th {
 th {
     background-color: rgba(255, 255, 255, 0.15);
 }
+:target {
+    scroll-margin-top: 4rem; /* navbar height */
+}
+
+/* custom things */
+a:has(.header-link) {
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    opacity: 0;
+    transition: 200ms;
+}
+a:has(.header-link):hover {
+    opacity: 1;
+}
+.header-link {
+    position: absolute;
+    right: 0.5rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    display: flex;
+}

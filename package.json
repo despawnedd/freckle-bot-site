@@ -31,6 +31,8 @@
         ]
     },
     "dependencies": {
-        "material-symbols": "^0.32.0"
+        "material-symbols": "^0.32.0",
+        "rehype-autolink-headings": "^7.1.0",
+        "rehype-slug": "^6.0.0"
     }
 }
