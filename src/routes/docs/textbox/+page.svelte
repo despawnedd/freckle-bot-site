@@ -5,8 +5,6 @@
 
 <script lang="ts">
     import { base } from "$app/paths";
-    import ss1 from "$lib/images/docs/textbox-1.png";
-    import ss2 from "$lib/images/docs/textbox-2.png";
 </script>
 
 <h1>UT/DR textbox generator</h1>
@@ -15,12 +13,12 @@
 <p>Has an animated (<code>/textboxa</code>) and static (<code>/textbox</code>) version.</p>
 <p>An example of such command:</p>
 <div class="img-div">
-    <img alt="Screenshot of the /textboxa command output in the Discord client" src={ss1}>
+    <img alt="Screenshot of the /textboxa command output in the Discord client" src={`${base}/images/docs/textbox-1.png`}>
 </div>
 
 <p>Both take the same arguments.</p>
 <div class="img-div">
-    <img alt="Screenshot of the arguments popup in the Discord client" src={ss2}>
+    <img alt="Screenshot of the arguments popup in the Discord client" src={`${base}/images/docs/textbox-2.png`}>
 </div>
 <ul style="line-height: 2rem;">
     <li>

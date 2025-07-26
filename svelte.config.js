@@ -12,6 +12,9 @@ const config = {
         }),
         paths: {
             base: process.argv.includes("dev") ? "" : "/freckle-bot-site"
+        },
+        alias: {
+            "$components": "src/components"
         }
     }
 };

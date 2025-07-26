@@ -4,8 +4,8 @@
 </svelte:head>
 
 <script lang="ts">
-    import NoelleLanding from "$lib/components/svg/NoelleLanding.svelte";
-    import ThickJuicyButton from "$lib/components/ThickJuicyButton.svelte";
+    import NoelleLanding from "$components/svg/NoelleLanding.svelte";
+    import ThickJuicyButton from "$components/ThickJuicyButton.svelte";
     import { base } from "$app/paths";
 
     const letters = "Freckle".split("");

@@ -4,7 +4,7 @@
 </svelte:head>
 
 <script lang="ts">
-    import LogoWithText from "$lib/components/svg/LogoWithText.svelte";
+    import LogoWithText from "$components/svg/LogoWithText.svelte";
 </script>
 
 <div id="logoDiv">
