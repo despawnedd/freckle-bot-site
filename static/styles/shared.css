@@ -60,3 +60,41 @@ a:has(.header-link):hover {
 h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
+
+/* Insane jank */
+.code-block {
+    display: inline-flex;
+    position: relative;
+}
+.code-block-copy-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    margin: 0;
+    cursor: pointer;
+}
+.code-block-copy-btn > .material-symbols-outlined {
+    padding-top: 0.5rem;
+    opacity: 0.2;
+    transition: 200ms;
+    pointer-events: none;
+}
+.code-block-copy-btn:hover > .material-symbols-outlined  {
+    opacity: 1;
+}
+.code-block-copy-btn-tooltip {
+    position: absolute;
+    top: 0.75rem;
+    right: 2.25rem;
+    font-family: "Fira Sans";
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: 200ms;
+}
+.code-block-copy-btn:hover > .code-block-copy-btn-tooltip {
+    opacity: 1;
+}

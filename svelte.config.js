@@ -1,9 +1,9 @@
 import { mdsvex } from "mdsvex";
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-
 import slug from "rehype-slug";
-import autolink_headings from "rehype-autolink-headings";
+import autolinkHeadings from "rehype-autolink-headings";
+import { autolinkHeadingsOptions, highlighter } from "./mdsvexAssist.js";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,23 +12,8 @@ const config = {
     preprocess: [
         vitePreprocess(),
         mdsvex({
-            rehypePlugins: [
-                [slug],
-                [
-                    autolink_headings,
-                    // don't look at this
-                    {
-                        content: {
-                            type: "element",
-                            tagName: "span",
-                            properties: {
-                                className: ["material-symbols-outlined", "header-link"]
-                            },
-                            children: [{ type: "text", value: "link" }]
-                        }
-                    }
-                ]
-            ]
+            rehypePlugins: [[slug], [autolinkHeadings, autolinkHeadingsOptions]],
+            highlight: { highlighter }
         })
     ],
     kit: {
