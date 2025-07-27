@@ -47,7 +47,7 @@
 <style>
     :root {
         --sidebar-width: 20rem;
-        --whatever-this-is: max(var(--sidebar-width), calc(.5 * 100vw - 25rem)) ;
+        --whatever-this-is: max(var(--sidebar-width), calc(.5 * 100vw - 30rem));
     }
     #main {
         min-height: calc(100dvh - 4rem);
@@ -71,8 +71,8 @@
         display: flex;
         flex-direction: column;
         gap: 0.9rem;
-        padding: 2rem 4rem 4rem calc(var(--whatever-this-is) + 4rem);
-        max-width: calc(var(--whatever-this-is) + 60rem);
+        padding: 2rem calc(var(--whatever-this-is) + 4rem) 4rem calc(var(--whatever-this-is) + 4rem);
+        width: 100%;
         @media screen and (width <= 1200px) {
             padding: 2rem 2rem 0 3rem;
         }

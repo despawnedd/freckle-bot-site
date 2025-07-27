@@ -13,6 +13,24 @@ export const autolinkHeadingsOptions = {
     }
 };
 
+export const tocOptions = {
+    customizeTOC: (toc) => {
+        toc.children.unshift({
+            type: "element",
+            tagName: "h3",
+            properties: {},
+            children: [{ type: "text", value: "Table of Contents" }]
+        });
+    },
+    customizeTOCItem: (toc, heading) => {
+        for (const a of toc.children[0].children) {
+            // remove "tag" (the copy icon) from titles
+            // TODO: don't make this a hardcoded 3...
+            a.value = a.value.substring(3);
+        }
+    }
+};
+
 function actualFreckleHighlighter(code, isDemo) {
     let start, end;
 

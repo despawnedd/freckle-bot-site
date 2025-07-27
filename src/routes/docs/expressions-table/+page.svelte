@@ -1,4 +1,4 @@
-<!-- Since this isn't a .svx file, I either have to manually add header links or set up jank -->
+<!-- Since this isn't a .svx file, I either have to manually add header links + toc or set up jank -->
 <!-- I chose the former -->
 
 <script lang="ts">
@@ -70,6 +70,13 @@
 <svelte:head>
     <title>{title} &ndash; Freckle</title>
 </svelte:head>
+
+<div class="toc">
+    <h3>Table of Contents</h3><br>
+    {#each chars as char}
+        <a href={`#${char.id}`}>{char.name}</a><br>
+    {/each}
+</div>
 
 {#snippet thingy(args: Whatever)}
     <h2 id={args.id}>

@@ -3,7 +3,8 @@ import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import slug from "rehype-slug";
 import autolinkHeadings from "rehype-autolink-headings";
-import { autolinkHeadingsOptions, highlighter } from "./mdsvexAssist.js";
+import toc from "@jsdevtools/rehype-toc";
+import { autolinkHeadingsOptions, highlighter, tocOptions } from "./mdsvexAssist.js";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,7 +13,7 @@ const config = {
     preprocess: [
         vitePreprocess(),
         mdsvex({
-            rehypePlugins: [[slug], [autolinkHeadings, autolinkHeadingsOptions]],
+            rehypePlugins: [[slug], [autolinkHeadings, autolinkHeadingsOptions], [toc, tocOptions]],
             highlight: { highlighter }
         })
     ],

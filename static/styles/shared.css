@@ -113,3 +113,25 @@ a:has(.header-link):hover {
 .code-block-copy-btn:hover > .code-block-copy-btn-tooltip {
     opacity: 1;
 }
+
+:root {
+    --sidebar-width: 20rem;
+    --whatever-this-is: max(var(--sidebar-width), calc(.5 * 100vw - 30rem));
+    --toc-left-padding: calc(100vw - (var(--whatever-this-is)) - 2rem);
+}
+.toc {
+    @media screen and (width > 1200px) {
+        position: fixed;
+        /* padding: 2rem calc(var(--whatever-this-is) + 4rem) 4rem calc(var(--whatever-this-is) + 4rem); */
+        left: var(--toc-left-padding);
+    }
+}
+.toc ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.toc a {
+    text-decoration: none;
+    color: #b2a7b8;
+}

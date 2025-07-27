@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@jsdevtools/rehype-toc':
+        specifier: ^3.0.2
+        version: 3.0.2
       material-symbols:
         specifier: ^0.32.0
         version: 0.32.0
@@ -223,6 +226,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
+
+  '@jsdevtools/rehype-toc@3.0.2':
+    resolution: {integrity: sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==}
+    engines: {node: '>=10'}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -785,6 +792,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
+
+  '@jsdevtools/rehype-toc@3.0.2': {}
 
   '@polka/url@1.0.0-next.29': {}
 
