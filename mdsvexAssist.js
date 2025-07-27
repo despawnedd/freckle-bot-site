@@ -84,7 +84,7 @@ export function highlighter(code, lang) {
 
     // TODO: PLEASE change this "demo" crap
     if (lang === "freckle")
-        processedCode = actualFreckleHighlighter(realCode);
+        processedCode = actualFreckleHighlighter(realCode, codeIsDemo);
 
     const tooltip = `<span class="code-block-copy-btn-tooltip">Copy</span>`;
 
