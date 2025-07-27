@@ -35,12 +35,12 @@ function actualFreckleHighlighter(code, isDemo) {
 
     // ! BIG ISSUE HERE IS THAT WRONG ARGUMENTS CAN GET HIGHLIGHTED
     // TODO: REWRITE EVERYTHING
-    if (takesArgs && !isDemo) {
+    if (takesArgs) {
         const replaceArg = (arg) => {
             processedCode = replaceLastOccurrenceInString(
                 processedCode,
                 arg,
-                `<span class="token ${isNumeric(arg) ? "number" : "string"}">${arg}</span>`
+                `<span class="token ${isDemo ? "keyword" : isNumeric(arg) ? "number" : "string"}">${arg}</span>`
             );
         };
 
