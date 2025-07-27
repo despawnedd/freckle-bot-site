@@ -77,17 +77,19 @@ function actualFreckleHighlighter(code, isDemo) {
 // * PLEASE DO NOT QUESTION THIS CODE
 export function highlighter(code, lang) {
     lang = lang.toLowerCase();
-    let processedCode = code;
 
-    // TODO: change this "demo" crap
     const codeIsDemo = code[0] === ":";
+    const realCode = codeIsDemo ? code.substring(1) : code;
+    let processedCode = realCode;
+
+    // TODO: PLEASE change this "demo" crap
     if (lang === "freckle")
-        processedCode = actualFreckleHighlighter(codeIsDemo ? code.substring(1) : code, codeIsDemo);
+        processedCode = actualFreckleHighlighter(realCode);
 
     const tooltip = `<span class="code-block-copy-btn-tooltip">Copy</span>`;
 
     const copybuttonOnClick = `(el) => {
-        navigator.clipboard.writeText("${code}");
+        navigator.clipboard.writeText("${realCode}");
         el.target.children[1].innerText = "Copied!";
         setTimeout(() => el.target.children[1].innerText = "Copy", 2000);
     }`;
