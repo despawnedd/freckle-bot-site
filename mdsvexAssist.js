@@ -81,7 +81,7 @@ export function highlighter(code, lang) {
             event.target.dataset.timeoutid = "-1";
         }, 210);
     }`;
-    const copybutton = `<button class="code-block-copy-btn" data-timeoutid="-1" on:click={${copybuttonOnClick}} on:mouseout={${copybuttonOnMouseOut}}><span class="material-symbols-outlined">content_copy</span>${tooltip}</button>`;
+    const copybutton = `<button class="code-block-copy-btn" data-timeoutid="-1" on:click={${copybuttonOnClick}} on:mouseout={${copybuttonOnMouseOut}} on:blur={${copybuttonOnMouseOut}}><span class="material-symbols-outlined">content_copy</span>${tooltip}</button>`;
 
     return `<pre class="language-${lang} code-block"><code class="language-${lang}">${escapeSvelty(processedCode)}</code>${copybutton}</pre>`;
 }
