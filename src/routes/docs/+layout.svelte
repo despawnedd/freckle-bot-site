@@ -66,7 +66,7 @@
     #docArticle {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.9rem;
         padding: 2rem 4rem 4rem 3rem;
         @media screen and (width <= 1200px) {
             padding: 2rem 2rem 0 3rem;

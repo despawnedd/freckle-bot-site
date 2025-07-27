@@ -12,8 +12,8 @@ title: Textbox commands
 
 The commands listed here are structured like this:
 
-```freckle
-:${command:argument1,argument2,argument3,...}
+```freckledemo
+${command:argument1,argument2,argument3,...}
 ```
 
 No quotation marks are needed for strings.
@@ -30,8 +30,8 @@ ${reset}
 
 Changes the color of the following text.
 
-```freckle
-:${color:color}
+```freckledemo
+${color:color}
 ```
 
 Arguments:
@@ -50,8 +50,8 @@ ${color:red}
 
 Makes the following text shake/tremble.
 
-```freckle
-:${shake:strength}
+```freckledemo
+${shake:strength}
 ```
 
 Arguments:
@@ -72,8 +72,8 @@ Applies a CSS [`drop-shadow()`](https://developer.mozilla.org/en-US/docs/Web/CSS
 
 Made so you can do things like [this](https://www.reddit.com/r/Undertale/comments/x80a77/guguys_whats_going_on_what_should_i_do/).
 
-```freckle
-:${glow:strength,radius,color}
+```freckledemo
+${glow:strength,radius,color}
 ```
 
 Arguments:

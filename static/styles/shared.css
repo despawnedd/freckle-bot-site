@@ -50,6 +50,9 @@ li {
 h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
+p {
+    line-height: 1.5;
+}
 
 :target {
     scroll-margin-top: 4rem; /* navbar height */

@@ -12,7 +12,7 @@ title: Introduction to Textboxes
 
 # {title}
 
-Generates textboxes (currently on UNDERTALE/DELTARUNE), akin to [Undertale text box generator - Demirramon's hideout](https://www.demirramon.com/generators/undertale_text_box_generator).
+Freckle can generate textboxes (currently on UNDERTALE/DELTARUNE) akin to [Undertale text box generator - Demirramon's hideout](https://www.demirramon.com/generators/undertale_text_box_generator).
 
 Has an animated (`/textboxa`) and static (`/textbox`) version.
 

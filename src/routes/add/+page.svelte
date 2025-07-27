@@ -3,7 +3,7 @@
     <title>Add or invite &ndash; Freckle</title>
 </svelte:head>
 
-<p>If you <i>really</i> want to add this thing then contact me on Discord: <code>despawnedd</code></p>
+<p>You can't access Freckle yet, sorry!</p>
 
 <style>
     p {
