@@ -47,27 +47,32 @@
 <style>
     :root {
         --sidebar-width: 20rem;
+        --whatever-this-is: max(var(--sidebar-width), calc(.5 * 100vw - 25rem)) ;
     }
     #main {
-        display: flex;
         min-height: calc(100dvh - 4rem);
         @media screen and (width <= 1200px) {
             flex-direction: column;
         }
     }
     aside {
+        min-width: none;
+        width: 100%;
         background-color: #1f1d27;
-        min-width: var(--sidebar-width);
-        @media screen and (width <= 1200px) {
-            min-width: none;
-            width: 100%;
+        display: flex;
+        @media screen and (width > 1200px) {
+            position: fixed;
+            justify-content: end;
+            /* thanks svelte docs */
+            width: var(--whatever-this-is);
         }
     }
     #docArticle {
         display: flex;
         flex-direction: column;
         gap: 0.9rem;
-        padding: 2rem 4rem 4rem 3rem;
+        padding: 2rem 4rem 4rem calc(var(--whatever-this-is) + 4rem);
+        max-width: calc(var(--whatever-this-is) + 60rem);
         @media screen and (width <= 1200px) {
             padding: 2rem 2rem 0 3rem;
         }
@@ -82,7 +87,6 @@
         @media screen and (width > 1200px) {
             min-width: var(--sidebar-width);
             height: calc(100dvh - 4rem);
-            position: fixed;
             padding-right: 4rem;
         }
     }
