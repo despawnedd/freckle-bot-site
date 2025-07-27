@@ -66,15 +66,12 @@
     }
     ul {
         list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
         background-color: #1f1d27;
         margin: 0;
+        padding: 2rem;
         @media screen and (width > 1200px) {
             position: fixed;
             height: 100%;
-            padding-top: 2rem;
             padding-right: 4rem;
         }
     }
