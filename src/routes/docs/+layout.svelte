@@ -73,7 +73,7 @@
         }
     }
     ul {
-        overflow: scroll;
+        overflow-y: auto;
         list-style: none;
         margin: 0;
         top: 4rem;
