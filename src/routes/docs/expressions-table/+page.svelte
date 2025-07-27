@@ -74,7 +74,7 @@
 {#snippet thingy(args: Whatever)}
     <h2 id={args.id}>
         <a aria-hidden="true" tabindex="-1" href={`#${args.id}`}>
-            <span class="material-symbols-outlined header-link">link</span>
+            <span class="material-symbols-outlined header-link">tag</span>
         </a>
         {args.name}
     </h2>
@@ -109,7 +109,7 @@
 
 <h1>
     <a aria-hidden="true" tabindex="-1" href="#title">
-        <span class="material-symbols-outlined header-link">link</span>
+        <span class="material-symbols-outlined header-link">tag</span>
     </a>
     Textbox character expressions table
 </h1>

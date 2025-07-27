@@ -45,33 +45,43 @@
 </div>
 
 <style>
-    aside {
-        float: left;
+    :root {
+        --sidebar-width: 20rem;
     }
-
     #main {
         display: flex;
+        min-height: calc(100dvh - 4rem);
         @media screen and (width <= 1200px) {
             flex-direction: column;
+        }
+    }
+    aside {
+        background-color: #1f1d27;
+        width: var(--sidebar-width);
+        @media screen and (width <= 1200px) {
+            width: 100%;
         }
     }
     #docArticle {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        padding: 2rem 4rem 4rem 22rem;
+        padding: 2rem 4rem 4rem 3rem;
         @media screen and (width <= 1200px) {
-            padding: 2rem 2rem 0 2rem;
+            padding: 2rem 2rem 0 3rem;
         }
     }
     ul {
+        width: var(--sidebar-width);
+        overflow: scroll;
         list-style: none;
-        background-color: #1f1d27;
         margin: 0;
-        padding: 2rem;
+        top: 4rem;
+        left: 0;
+        padding: 2rem 2rem 2rem 2rem;
         @media screen and (width > 1200px) {
+            height: calc(100dvh - 4rem);
             position: fixed;
-            height: 100%;
             padding-right: 4rem;
         }
     }
@@ -79,9 +89,11 @@
         text-decoration: none;
     }
     ul a {
-        padding: 1rem;
         border-radius: 0.5rem;
         color: #b2a7b8;
+    }
+    ul h3:not(:first-child) {
+        padding-top: 1rem;
     }
     li.active > a {
         color: white;

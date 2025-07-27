@@ -1,6 +1,6 @@
 import { escapeSvelty, isNumeric, replaceLastOccurrenceInString } from "./miniUtils.js";
 
-// adds a little link icon next to headers
+// adds a little hash icon next to headers
 // ? to self: consider adding automatic clipboard-copying
 export const autolinkHeadingsOptions = {
     content: {
@@ -9,7 +9,7 @@ export const autolinkHeadingsOptions = {
         properties: {
             className: ["material-symbols-outlined", "header-link"]
         },
-        children: [{ type: "text", value: "link" }]
+        children: [{ type: "text", value: "tag" }]
     }
 };
 
