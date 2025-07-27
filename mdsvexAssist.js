@@ -64,12 +64,24 @@ export function highlighter(code, lang) {
 
     const tooltip = `<span class="code-block-copy-btn-tooltip">Copy</span>`;
 
-    const copybuttonOnClick = `(el) => {
+    const copybuttonOnClick = `(event) => {
         navigator.clipboard.writeText("${realCode}");
-        el.target.children[1].innerText = "Copied!";
-        setTimeout(() => el.target.children[1].innerText = "Copy", 2000);
+        event.target.children[1].innerText = "Copied!";
+
+        if (event.target.dataset.timeoutid !== "-1") clearTimeout(event.target.dataset.timeoutid);
+        event.target.dataset.timeoutid = setTimeout(() => {
+            event.target.children[1].innerText = "Copy";
+            event.target.dataset.timeoutid = "-1";
+        }, 2000);
     }`;
-    const copybutton = `<button class="code-block-copy-btn" onclick={${copybuttonOnClick}}><span class="material-symbols-outlined">content_copy</span>${tooltip}</button>`;
+    const copybuttonOnMouseOut = `(event) => {
+        if (event.target.dataset.timeoutid !== "-1") clearTimeout(event.target.dataset.timeoutid);
+        event.target.dataset.timeoutid = setTimeout(() => {
+            event.target.children[1].innerText = "Copy";
+            event.target.dataset.timeoutid = "-1";
+        }, 210);
+    }`;
+    const copybutton = `<button class="code-block-copy-btn" data-timeoutid="-1" on:click={${copybuttonOnClick}} on:mouseout={${copybuttonOnMouseOut}}><span class="material-symbols-outlined">content_copy</span>${tooltip}</button>`;
 
     return `<pre class="language-${lang} code-block"><code class="language-${lang}">${escapeSvelty(processedCode)}</code>${copybutton}</pre>`;
 }
