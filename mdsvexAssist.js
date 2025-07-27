@@ -33,41 +33,18 @@ function actualFreckleHighlighter(code, isDemo) {
         `<span class="token function">${funcName}</span>`
     );
 
-    // ! BIG ISSUE HERE IS THAT WRONG ARGUMENTS CAN GET HIGHLIGHTED
-    // TODO: REWRITE EVERYTHING
     if (takesArgs) {
-        const replaceArg = (arg) => {
-            processedCode = replaceLastOccurrenceInString(
-                processedCode,
-                arg,
-                `<span class="token ${isDemo ? "keyword" : isNumeric(arg) ? "number" : "string"}">${arg}</span>`
-            );
-        };
-
-        const hasMultipleArgs = code.includes(",");
-
         // get arguments substring
         start = ":";
         end = "}";
         const argsStr = code.substring(code.indexOf(start) + 1, code.indexOf(end));
 
-        // highlight first argument
-        const firstArg = hasMultipleArgs ? argsStr.substring(0, argsStr.indexOf(",")) : argsStr;
-        replaceArg(firstArg);
+        let args = argsStr.split(",");
+        for (let i = 0; i < args.length; i++)
+            args[i] =
+                `<span class="token ${isDemo ? "keyword" : isNumeric(args[i]) ? "number" : "string"}">${args[i]}</span>`;
 
-        if (hasMultipleArgs) {
-            // ! TEMPORARY
-            start = end = ",";
-            const middleArg = argsStr.substring(
-                argsStr.indexOf(start) + 1,
-                argsStr.lastIndexOf(end)
-            );
-            replaceArg(middleArg);
-
-            // not temporary
-            const lastArg = argsStr.substring(argsStr.lastIndexOf(",") + 1);
-            replaceArg(lastArg);
-        }
+        processedCode = replaceLastOccurrenceInString(processedCode, argsStr, args.toString(","));
     }
 
     return processedCode;
@@ -83,8 +60,7 @@ export function highlighter(code, lang) {
     let processedCode = realCode;
 
     // TODO: PLEASE change this "demo" crap
-    if (lang === "freckle")
-        processedCode = actualFreckleHighlighter(realCode, codeIsDemo);
+    if (lang === "freckle") processedCode = actualFreckleHighlighter(realCode, codeIsDemo);
 
     const tooltip = `<span class="code-block-copy-btn-tooltip">Copy</span>`;
 
