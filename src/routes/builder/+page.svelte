@@ -7,7 +7,7 @@
     import { base } from "$app/paths";
 </script>
 
-<p>Not yet implemented, please consult the <a href={`${base}/docs`}>docs!</a></p>
+<p>Not yet implemented, please consult the <a href={`${base}/docs/textbox-commands`}>docs</a>!</p>
 
 <style>
     p {

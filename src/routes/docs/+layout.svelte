@@ -57,8 +57,9 @@
     }
     aside {
         background-color: #1f1d27;
-        width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
         @media screen and (width <= 1200px) {
+            min-width: none;
             width: 100%;
         }
     }
@@ -72,7 +73,6 @@
         }
     }
     ul {
-        width: var(--sidebar-width);
         overflow: scroll;
         list-style: none;
         margin: 0;
@@ -80,6 +80,7 @@
         left: 0;
         padding: 2rem 2rem 2rem 2rem;
         @media screen and (width > 1200px) {
+            min-width: var(--sidebar-width);
             height: calc(100dvh - 4rem);
             position: fixed;
             padding-right: 4rem;
