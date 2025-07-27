@@ -12,8 +12,8 @@ title: Textbox commands
 
 The commands listed here are structured like this:
 
-```text
-${command:argument1,argument2,argument3,...}
+```freckle
+:${command:argument1,argument2,argument3,...}
 ```
 
 No quotation marks are needed for strings.
@@ -22,7 +22,7 @@ No quotation marks are needed for strings.
 
 Resets the styling of the following text. Takes no arguments.
 
-```text
+```freckle
 ${reset}
 ```
 
@@ -30,8 +30,8 @@ ${reset}
 
 Changes the color of the following text.
 
-```text
-${color:color}
+```freckle
+:${color:color}
 ```
 
 Arguments:
@@ -42,7 +42,7 @@ Arguments:
 
 Example:
 
-```text
+```freckle
 ${color:red}
 ```
 
@@ -50,8 +50,8 @@ ${color:red}
 
 Makes the following text shake/tremble.
 
-```text
-${shake:strength}
+```freckle
+:${shake:strength}
 ```
 
 Arguments:
@@ -62,7 +62,7 @@ Arguments:
 
 Example:
 
-```text
+```freckle
 ${shake:1}
 ```
 
@@ -71,6 +71,10 @@ ${shake:1}
 Applies a CSS [`drop-shadow()`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow) filter (optionally several times). In other words, it makes text glow.
 
 Made so you can do things like [this](https://www.reddit.com/r/Undertale/comments/x80a77/guguys_whats_going_on_what_should_i_do/).
+
+```freckle
+:${glow:strength,radius,color}
+```
 
 Arguments:
 
@@ -82,6 +86,6 @@ Arguments:
 
 Example:
 
-```text
+```freckle
 ${glow:10,4px,red}
 ```
