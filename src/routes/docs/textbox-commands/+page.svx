@@ -36,9 +36,9 @@ Changes the color of the following text.
 
 Arguments:
 
-| Name  | Explanation                                                                                          |
-| ----- | ---------------------------------------------------------------------------------------------------- |
-| color | A [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) like `red` or `#ffffff`. |
+| Name    | Explanation                                                                                          |
+| ------- | ---------------------------------------------------------------------------------------------------- |
+| `color` | A [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) like `red` or `#ffffff`. |
 
 Example:
 
@@ -56,9 +56,9 @@ Makes the following text shake/tremble.
 
 Arguments:
 
-| Name     | Explanation                     |
-| -------- | ------------------------------- |
-| strength | An integer like `1`. In pixels. |
+| Name       | Explanation                     |
+| ---------- | ------------------------------- |
+| `strength` | An integer like `1`. In pixels. |
 
 Example:
 
@@ -78,11 +78,11 @@ Made so you can do things like [this](https://www.reddit.com/r/Undertale/comment
 
 Arguments:
 
-| Name     | Explanation                                                                                                   |
-| -------- | ------------------------------------------------------------------------------------------------------------- |
-| strength | An integer like `10`. Specifies how many times the drop shadow effect will be drawn.                          |
-| radius   | The drop shadow radius, eg. 4px. See CSS [`length`](https://developer.mozilla.org/en-US/docs/Web/CSS/length). |
-| color    | A [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) like `red` or `#ffffff`.          |
+| Name       | Explanation                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `strength` | An integer like `10`. Specifies how many times the drop shadow effect will be drawn.                          |
+| `radius`   | The drop shadow radius, eg. 4px. See CSS [`length`](https://developer.mozilla.org/en-US/docs/Web/CSS/length). |
+| `color`    | A [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) like `red` or `#ffffff`.          |
 
 Example:
 
