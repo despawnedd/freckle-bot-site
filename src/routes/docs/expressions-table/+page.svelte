@@ -2,7 +2,7 @@
 <!-- I chose the former -->
 
 <script lang="ts">
-    export const title = "Expressions table";
+    export const title = "Textbox character expressions table";
 
     import { base } from "$app/paths";
 
@@ -72,10 +72,17 @@
 </svelte:head>
 
 <div class="toc">
-    <h3>Table of Contents</h3><br>
-    {#each chars as char}
-        <a href={`#${char.id}`}>{char.name}</a><br>
-    {/each}
+    <h3>Table of Contents</h3>
+    <ol>
+        <li>
+            <a href="#title">{title}</a>
+        </li>
+        {#each chars as char}
+            <li>
+                <a href={`#${char.id}`}>{char.name}</a>
+            </li>
+        {/each}
+    </ol>
 </div>
 
 {#snippet thingy(args: Whatever)}
@@ -114,11 +121,11 @@
     </table>
 {/snippet}
 
-<h1>
+<h1 id="title">
     <a aria-hidden="true" tabindex="-1" href="#title">
         <span class="material-symbols-outlined header-link">tag</span>
     </a>
-    Textbox character expressions table
+    {title}
 </h1>
 <p>Most sprites are from The Sprites Resource (check the links below).</p>
 <p>
