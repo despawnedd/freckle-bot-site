@@ -56,7 +56,7 @@
     #navLeftLinks {
         gap: 2rem;
         display: none;
-        @media screen and (width >= 800px) {
+        @media screen and (width >= 440px) {
             display: flex;
             align-items: center;
         }

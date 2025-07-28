@@ -46,7 +46,7 @@
 
 <style>
     :root {
-        --sidebar-width: 20rem;
+        --sidebar-width: 18rem;
         --whatever-this-is: max(var(--sidebar-width), calc(.5 * 100vw - 30rem));
     }
     #main {
@@ -74,7 +74,7 @@
         padding: 2rem calc(var(--whatever-this-is) + 4rem) 4rem calc(var(--whatever-this-is) + 4rem);
         width: 100%;
         @media screen and (width <= 1200px) {
-            padding: 2rem 2rem 0 3rem;
+            padding: 2rem 2rem 4rem 3rem;
         }
     }
     ul {
@@ -107,10 +107,8 @@
 
     #toTopBtnDiv {
         position: fixed;
-        top: 0;
-        left: 0;
-        margin-left: calc(100dvw - 6rem);
-        margin-top: calc(100dvh - 6rem);
+        bottom: 2rem;
+        right: 2rem;
         z-index: 1000;
     }
     #toTopBtn {
