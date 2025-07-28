@@ -97,12 +97,12 @@
     </p>
     <div style="display: flex; flex-wrap: wrap;">
         {#each { length: args.length }, i}
-            <div class="exp-cont">
+            <button class="exp-cont" onclick={() => navigator.clipboard.writeText((i + 1).toString())}>
                 <div>
                     <img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} />
                 </div>
                 <span>{i + 1}</span>
-            </div>
+            </button>
         {/each}
     </div>
 {/snippet}
@@ -114,6 +114,7 @@
     {title}
 </h1>
 <p>Most sprites are from The Sprites Resource (check the links below).</p>
+<p>Click on a sprite to copy the ID.</p>
 
 {#each chars as char}
     {@render thingy(char)}
@@ -131,5 +132,14 @@
         border: 1px solid #b2a7b8;
         background-color: rgba(255, 255, 255, 0.1);
         padding: 0.5rem;
+        transition: 200ms;
+    }
+    .exp-cont:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+    }
+    .exp-cont:active {
+        background-color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
     }
 </style>
