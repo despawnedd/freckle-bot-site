@@ -95,30 +95,16 @@
     <p>
         <a href={args.href} target="_blank">{args.hrefTitle}</a>
     </p>
-    <table>
-        <tbody>
-            <tr>
-                <th>ID</th>
-                <th>Portrait</th>
-                <th>Description</th>
-            </tr>
-            {#each { length: args.length }, i}
-                <tr>
-                    <td>{i + 1}</td>
-                    <td>
-                        <div>
-                            <img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} />
-                        </div>
-                    </td>
-                    {#if i === 0}
-                        <td><ul><li>default</li></ul></td>
-                    {:else}
-                       <td>(to be added)</td>
-                    {/if}
-                </tr>
-            {/each}
-        </tbody>
-    </table>
+    <div style="display: flex; flex-wrap: wrap;">
+        {#each { length: args.length }, i}
+            <div class="exp-cont">
+                <div>
+                    <img alt={args.id} src={`${base}/images/expressions/${args.id}/${i + 1}.png`} />
+                </div>
+                <span>{i + 1}</span>
+            </div>
+        {/each}
+    </div>
 {/snippet}
 
 <h1 id="title">
@@ -134,28 +120,16 @@
 {/each}
 
 <style>
-    table {
-        max-width: 25rem;
-    }
-    th:nth-child(1) {
-        width: 2rem;
-    }
-    th:nth-child(2) {
-        width: 0;
-    }
-    td:nth-child(1) {
-        font-size: 20pt;
-        text-align: center;
-    }
-    td:nth-child(2) {
-        background-color: black;
-        width: 8.5rem;
-        height: 9.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     img {
         image-rendering: pixelated;
+    }
+    .exp-cont {
+        width: 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #b2a7b8;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0.5rem;
     }
 </style>
