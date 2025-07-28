@@ -128,15 +128,6 @@
     {title}
 </h1>
 <p>Most sprites are from The Sprites Resource (check the links below).</p>
-<p>
-    skip to:
-    {#each chars as char, i}
-        {#if i > 0}
-            <span>,</span>
-        {/if}
-        <a href={`#${char.id}`}>{char.name}</a>
-    {/each}
-</p>
 
 {#each chars as char}
     {@render thingy(char)}
