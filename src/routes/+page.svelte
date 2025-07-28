@@ -63,13 +63,13 @@
             icon="book_2"
             text="Read the docs"
             href={`${base}/docs/what-is-freckle`} />
-        <ThickJuicyButton
+        <!-- <ThickJuicyButton
             color1="#d0bb97"
             color2="#b79f76"
             color3="#9c845b"
             icon="build"
             text="Command builder"
-            href={`${base}/builder`} />
+            href={`${base}/builder`} /> -->
     </div>
     <span id="copy">&copy; despawnedd 2025</span>
 </div>
@@ -149,15 +149,14 @@
     #noelleContainer {
         pointer-events: none;
         user-select: none;
-        display: flex;
         justify-content: right;
         min-width: 100%;
-        max-width: 50rem;
         @media screen and (width >= 800px) {
             top: 0;
             left: 0;
             padding: 4rem;
             position: absolute;
+            display: flex;
         }
         @media screen and (width >= 1280px) {
             padding-right: 12rem;
@@ -169,9 +168,10 @@
         @media screen and (width >= 800px) {
             margin: 0;
             padding-top: 1rem;
-            max-width: 60rem;
+            max-width: 50rem;
             width: 50%;
         }
+        z-index: -1;
     }
 
     #glowyContainer {

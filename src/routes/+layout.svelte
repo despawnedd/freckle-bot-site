@@ -21,7 +21,7 @@
         <div id="navLeftLinks">
             {@render navLink("add")}
             {@render navLink("docs", "docs/what-is-freckle")}
-            {@render navLink("builder")}
+            <!-- {@render navLink("builder")} -->
         </div>
     </div>
     <div id="navRight">
